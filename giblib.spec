@@ -14,8 +14,6 @@ BuildRequires:	imlib2-devel
 BuildRequires:	libltdl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 giblib is a utility library used by many of the applications LinuxBrit
