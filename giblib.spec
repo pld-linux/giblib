@@ -23,7 +23,7 @@ and a wrapper for imlib2. The wrapper does two things. It gives you
 access to fontstyles, which can be loaded from files, saved to files
 or defined dynamically through the API. It also, and more importantly,
 wraps imlib2's context API to simplify calls.
-			      
+
 %description -l pl
 giblib to biblioteka narzêdziowa u¿ywana w wielu aplikacjach autorstwa
 LinuxBrit. Zawiera dwukierunkowe listy, funkcje do obs³ugi ci±gów
