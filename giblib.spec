@@ -1,12 +1,12 @@
 Summary:	Utility library used in many applications by LinuxBrit
 Summary(pl):	Biblioteka narzêdziowa u¿ywana w wielu aplikacjach LinuxBrit
 Name:		giblib
-Version:	1.2.3
+Version:	1.2.4
 Release:	1
 License:	BSD-like
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	06ae3113fdfe9f05a642bd844cc85eab
+# Source0-md5:	c810ef5389baf24882a1caca2954385e
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
