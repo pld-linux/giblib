@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/%{name}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 
 %files static
 %defattr(644,root,root,755)
