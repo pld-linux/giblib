@@ -6,6 +6,7 @@ Release:	1
 License:	BSD-like
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	06ae3113fdfe9f05a642bd844cc85eab
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
