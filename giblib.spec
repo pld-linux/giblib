@@ -61,7 +61,8 @@ Statyczna wersja biblioteki giblib.
 %setup -q
 
 %build
-aclocal
+rm -f missing
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
@@ -73,8 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-gzip -9nf AUTHORS ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -83,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
