@@ -62,8 +62,8 @@ Statyczna wersja biblioteki giblib.
 
 %build
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 
 %{__make}
