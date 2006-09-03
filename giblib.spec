@@ -10,9 +10,9 @@ Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	imlib2-devel
 BuildRequires:	libltdl-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -36,7 +36,7 @@ niektórych funkcji Imlib2.
 Summary:	Header files for giblib
 Summary(pl):	Pliki nag³ówkowe giblib
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for giblib.
@@ -48,7 +48,7 @@ Pliki nag³ówkowe biblioteki giblib.
 Summary:	giblib static library
 Summary(pl):	Statyczna biblioteka giblib
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of giblib library.
