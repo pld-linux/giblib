@@ -1,5 +1,5 @@
 Summary:	Utility library used in many applications by LinuxBrit
-Summary(pl):	Biblioteka narzêdziowa u¿ywana w wielu aplikacjach LinuxBrit
+Summary(pl.UTF-8):   Biblioteka narzÄ™dziowa uÅ¼ywana w wielu aplikacjach LinuxBrit
 Name:		giblib
 Version:	1.2.4
 Release:	1
@@ -24,36 +24,36 @@ access to fontstyles, which can be loaded from files, saved to files
 or defined dynamically through the API. It also, and more importantly,
 wraps imlib2's context API to simplify calls.
 
-%description -l pl
-giblib to biblioteka narzêdziowa u¿ywana w wielu aplikacjach autorstwa
-LinuxBrit. Zawiera dwukierunkowe listy, funkcje do obs³ugi ci±gów
-znaków i wrapper do Imlib2. Wrapper robi dwie rzeczy: dostêp do styli
-fontów, które mog± byæ wczytywane z plików, zapisywane do plików lub
-definiowane dynamicznie poprzez API, oraz upraszcza wywo³ania
-niektórych funkcji Imlib2.
+%description -l pl.UTF-8
+giblib to biblioteka narzÄ™dziowa uÅ¼ywana w wielu aplikacjach autorstwa
+LinuxBrit. Zawiera dwukierunkowe listy, funkcje do obsÅ‚ugi ciÄ…gÃ³w
+znakÃ³w i wrapper do Imlib2. Wrapper robi dwie rzeczy: dostÄ™p do styli
+fontÃ³w, ktÃ³re mogÄ… byÄ‡ wczytywane z plikÃ³w, zapisywane do plikÃ³w lub
+definiowane dynamicznie poprzez API, oraz upraszcza wywoÅ‚ania
+niektÃ³rych funkcji Imlib2.
 
 %package devel
 Summary:	Header files for giblib
-Summary(pl):	Pliki nag³ówkowe giblib
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe giblib
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for giblib.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki giblib.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki giblib.
 
 %package static
 Summary:	giblib static library
-Summary(pl):	Statyczna biblioteka giblib
+Summary(pl.UTF-8):   Statyczna biblioteka giblib
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of giblib library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki giblib.
 
 %prep
