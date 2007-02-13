@@ -1,5 +1,5 @@
 Summary:	Utility library used in many applications by LinuxBrit
-Summary(pl.UTF-8):   Biblioteka narzędziowa używana w wielu aplikacjach LinuxBrit
+Summary(pl.UTF-8):	Biblioteka narzędziowa używana w wielu aplikacjach LinuxBrit
 Name:		giblib
 Version:	1.2.4
 Release:	1
@@ -34,7 +34,7 @@ niektórych funkcji Imlib2.
 
 %package devel
 Summary:	Header files for giblib
-Summary(pl.UTF-8):   Pliki nagłówkowe giblib
+Summary(pl.UTF-8):	Pliki nagłówkowe giblib
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,7 +46,7 @@ Pliki nagłówkowe biblioteki giblib.
 
 %package static
 Summary:	giblib static library
-Summary(pl.UTF-8):   Statyczna biblioteka giblib
+Summary(pl.UTF-8):	Statyczna biblioteka giblib
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
