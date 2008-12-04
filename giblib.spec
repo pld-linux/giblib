@@ -2,7 +2,7 @@ Summary:	Utility library used in many applications by LinuxBrit
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana w wielu aplikacjach LinuxBrit
 Name:		giblib
 Version:	1.2.4
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
