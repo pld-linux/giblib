@@ -1,0 +1,10 @@
+--- giblib-1.2.4/giblib.pc.in.orig	2004-09-04 16:40:40.000000000 +0200
++++ giblib-1.2.4/giblib.pc.in	2014-01-12 09:14:49.440333813 +0100
+@@ -6,6 +6,6 @@
+ Name: giblib
+ Description: wrapper library for imlib2, and other stuff
+ Version: @VERSION@
+-Libs: -L${libdir} -lgiblib @LDFLAGS@ @IMLIB_LIBS@
++Libs: -L${libdir} -lgiblib @IMLIB_LIBS@
+ Cflags: -I${includedir} -I${includedir}/giblib @IMLIB_CFLAGS@
+ 

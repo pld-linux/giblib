@@ -3,18 +3,18 @@ Summary(pl.UTF-8):	Biblioteka narzędziowa używana w wielu aplikacjach LinuxBri
 Name:		giblib
 Version:	1.2.4
 Release:	3
-License:	BSD-like
+License:	MIT
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	c810ef5389baf24882a1caca2954385e
+Patch0:		%{name}-pc.patch
 URL:		http://www.linuxbrit.co.uk/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	imlib2-devel
-BuildRequires:	libltdl-devel
+BuildRequires:	imlib2-devel >= 1.0.0
 BuildRequires:	libtool
+Requires:	imlib2 >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 giblib is a utility library used by many of the applications LinuxBrit
@@ -26,8 +26,8 @@ wraps imlib2's context API to simplify calls.
 
 %description -l pl.UTF-8
 giblib to biblioteka narzędziowa używana w wielu aplikacjach autorstwa
-LinuxBrit. Zawiera dwukierunkowe listy, funkcje do obsługi ciągów
-znaków i wrapper do Imlib2. Wrapper robi dwie rzeczy: dostęp do styli
+LinuxBrit. Zawiera dwukierunkowe listy, funkcje do obsługi łańcuchów
+znaków i wrapper dla Imlib2. Wrapper robi dwie rzeczy: dostęp do styli
 fontów, które mogą być wczytywane z plików, zapisywane do plików lub
 definiowane dynamicznie poprzez API, oraz upraszcza wywołania
 niektórych funkcji Imlib2.
@@ -37,6 +37,7 @@ Summary:	Header files for giblib
 Summary(pl.UTF-8):	Pliki nagłówkowe giblib
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	imlib2-devel >= 1.0.0
 
 %description devel
 Header files for giblib.
@@ -58,12 +59,13 @@ Statyczna wersja biblioteki giblib.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 
@@ -72,7 +74,11 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+# packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_prefix}/doc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -82,17 +88,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
+%doc AUTHORS COPYING ChangeLog
+%attr(755,root,root) %{_libdir}/libgiblib.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgiblib.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/%{name}
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_bindir}/giblib-config
+%attr(755,root,root) %{_libdir}/libgiblib.so
+%{_libdir}/libgiblib.la
+%{_includedir}/giblib
+%{_pkgconfigdir}/giblib.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgiblib.a
