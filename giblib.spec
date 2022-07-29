@@ -2,7 +2,7 @@ Summary:	Utility library used in many applications by LinuxBrit
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana w wielu aplikacjach LinuxBrit
 Name:		giblib
 Version:	1.2.4
-Release:	3
+Release:	4
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
@@ -77,6 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgiblib.la
+
 # packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_prefix}/doc
 
@@ -96,7 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/giblib-config
 %attr(755,root,root) %{_libdir}/libgiblib.so
-%{_libdir}/libgiblib.la
 %{_includedir}/giblib
 %{_pkgconfigdir}/giblib.pc
 
