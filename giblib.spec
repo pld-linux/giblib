@@ -2,12 +2,13 @@ Summary:	Utility library used in many applications by LinuxBrit
 Summary(pl.UTF-8):	Biblioteka narzędziowa używana w wielu aplikacjach LinuxBrit
 Name:		giblib
 Version:	1.2.4
-Release:	4
+Release:	5
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	c810ef5389baf24882a1caca2954385e
 Patch0:		%{name}-pc.patch
+Patch1:		%{name}-imlib2.patch
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -60,6 +61,7 @@ Statyczna wersja biblioteki giblib.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
